@@ -15,9 +15,8 @@ namespace ConsoleApp_cameras
         static void Main(string[] args)
         {
 
-            monitorar("10.11.119.36:8081");
-            //monitorar("10.11.119.37:8082");
-            //Task.Run(() => monitorar("10.11.119.37:8082"));
+            monitorar("IP:PORTA");
+            //Task.Run(() => monitorar(""));
 
             Console.ReadKey();
         }
@@ -26,7 +25,7 @@ namespace ConsoleApp_cameras
         {
             string responseString = string.Empty;
             var httpWebRequestCameraSnapManager = (HttpWebRequest)WebRequest.Create($"http://{cameraIp}/cgi-bin/snapManager.cgi?action=attachFileProc&Flags[0]=Event&Events=[FaceDetection]&heartbeat=1");
-            httpWebRequestCameraSnapManager.Credentials = new NetworkCredential("admin", "SIRIUS@1234");
+            httpWebRequestCameraSnapManager.Credentials = new NetworkCredential("__USER__", "__SENHA___");
             //httpWebRequestCameraSnapManager.UserAgent = "Mozilla / 5.0(Windows NT 10.0; Win64; x64) AppleWebKit / 537.36(KHTML, like Gecko) Chrome / 72.0.3626.121 Safari / 537.36";
             //httpWebRequestCameraSnapManager.AllowReadStreamBuffering = true;
             //httpWebRequestCameraSnapManager.Method = "GET";
